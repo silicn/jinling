@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
     func requestData(){
-        let urlString = "https://www.ratjin.com/rat/topic/list"
+        let urlString = ""
         let url:URL = URL(string: urlString)!
         
         Alamofire.request(url,method:.post).responseJSON { (response) in
