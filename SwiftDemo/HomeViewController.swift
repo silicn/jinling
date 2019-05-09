@@ -12,6 +12,9 @@ import Alamofire
 
 class HomeViewController: UIViewController {
 
+    
+    var tableView:UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.cyan
@@ -19,11 +22,12 @@ class HomeViewController: UIViewController {
         
         
         
+        
 
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
     /*
     // MARK: - Navigation
 
