@@ -20,6 +20,8 @@
 		97B79A26225F3331001FEB3E /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B79A24225F3331001FEB3E /* MineViewController.swift */; };
 		97B79A27225F3331001FEB3E /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97B79A25225F3331001FEB3E /* MineViewController.xib */; };
 		97B79A29225F33DB001FEB3E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B79A28225F33DB001FEB3E /* RootViewController.swift */; };
+		97CDB63B22893BDC00257F77 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDB63922893BDC00257F77 /* HomeViewCell.swift */; };
+		97CDB63C22893BDC00257F77 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CDB63A22893BDC00257F77 /* HomeViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		97B79A24225F3331001FEB3E /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		97B79A25225F3331001FEB3E /* MineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
 		97B79A28225F33DB001FEB3E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		97CDB63922893BDC00257F77 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		97CDB63A22893BDC00257F77 /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				97B79A28225F33DB001FEB3E /* RootViewController.swift */,
 				97B79A20225F3320001FEB3E /* HomeViewController.swift */,
 				97348BAF228268C00043DE36 /* KnowEntity.swift */,
+				97CDB63922893BDC00257F77 /* HomeViewCell.swift */,
+				97CDB63A22893BDC00257F77 /* HomeViewCell.xib */,
 				97348BAC228262140043DE36 /* SwiftViewController.swift */,
 				97B79A21225F3320001FEB3E /* HomeViewController.xib */,
 				97B79A24225F3331001FEB3E /* MineViewController.swift */,
@@ -180,6 +186,7 @@
 				97B79A27225F3331001FEB3E /* MineViewController.xib in Resources */,
 				97B79A17225F329E001FEB3E /* LaunchScreen.storyboard in Resources */,
 				97B79A14225F329E001FEB3E /* Assets.xcassets in Resources */,
+				97CDB63C22893BDC00257F77 /* HomeViewCell.xib in Resources */,
 				97B79A12225F329D001FEB3E /* Main.storyboard in Resources */,
 				97B79A23225F3320001FEB3E /* HomeViewController.xib in Resources */,
 			);
@@ -220,12 +227,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -240,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97348BAD228262140043DE36 /* SwiftViewController.swift in Sources */,
+				97CDB63B22893BDC00257F77 /* HomeViewCell.swift in Sources */,
 				97B79A29225F33DB001FEB3E /* RootViewController.swift in Sources */,
 				97B79A0F225F329D001FEB3E /* ViewController.swift in Sources */,
 				97B79A0D225F329D001FEB3E /* AppDelegate.swift in Sources */,
