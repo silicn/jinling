@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 
     
     var tableView:UITableView?
-    var dataSource:Array<KnowEntity>?
+   private var dataSource:Array<KnowEntity>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         self.view.addSubview(self.tableView!);
         
         self.tableView?.register(UINib.init(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeViewCell")
-        
+         self.dataSource = Array<KnowEntity>()
         requestData()
         
         
@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 20;
+        return self.dataSource!.count;
     }
     
     
@@ -61,26 +61,29 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     
     @available(iOS 2.0, *)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as! HomeViewCell
+        let cell:HomeViewCell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as! HomeViewCell
+        let know = self.dataSource?[indexPath.row] as KnowEntity?
+        cell.textLab.text = know!.content
         return cell
     }
     
     func requestData(){
-        let urlString = "https://www.ratjin.com/rat/topic/list"
+        let urlString = ""
         let url:URL = URL(string: urlString)!
         
         Alamofire.request(url,method:.post).responseJSON { (response) in
             if response.result.isSuccess {
-                print(response.result.value as Any)
                 
-                if let json = response.result.value {
-                    let dic = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments)
-                    let array = dic?["list"]
-                    for dictionary in array{
+                if response.result.value != nil {
+                    let dic = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as?[String:Any]
+                    let list = dic?["list"] as! [Any]
+                   
+                    for know in list {
+                        let model = KnowEntity(dic: know as! Dictionary<String, Any>);
+                        self.dataSource?.append(model)
                     }
                 }
-
-                
+                self.tableView?.reloadData()
             }else{
                 print("request error")
             }

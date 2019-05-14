@@ -19,19 +19,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试一下" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM9-Ir-Bxa">
-                        <rect key="frame" x="16" y="13" width="61.5" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试一下" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM9-Ir-Bxa">
+                        <rect key="frame" x="16" y="13" width="288" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="hM9-Ir-Bxa" secondAttribute="trailing" constant="16" id="BZf-a1-raQ"/>
                     <constraint firstItem="hM9-Ir-Bxa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IDK-aX-clC"/>
-                    <constraint firstItem="hM9-Ir-Bxa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jyf-FW-xfh"/>
+                    <constraint firstAttribute="bottom" secondItem="hM9-Ir-Bxa" secondAttribute="bottom" constant="12.5" id="gd9-g2-qfy"/>
+                    <constraint firstItem="hM9-Ir-Bxa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="rXn-kn-ewz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="textLab" destination="hM9-Ir-Bxa" id="Lhb-b6-BUv"/>
+            </connections>
+            <point key="canvasLocation" x="44.927536231884062" y="69.642857142857139"/>
         </tableViewCell>
     </objects>
 </document>
