@@ -22,6 +22,8 @@
 		97B79A29225F33DB001FEB3E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B79A28225F33DB001FEB3E /* RootViewController.swift */; };
 		97CDB63B22893BDC00257F77 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDB63922893BDC00257F77 /* HomeViewCell.swift */; };
 		97CDB63C22893BDC00257F77 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CDB63A22893BDC00257F77 /* HomeViewCell.xib */; };
+		97CDB649228ADB2600257F77 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDB648228ADB2600257F77 /* DetailViewController.swift */; };
+		97CDB64D228B9A6900257F77 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDB64C228B9A6900257F77 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		97B79A28225F33DB001FEB3E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		97CDB63922893BDC00257F77 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		97CDB63A22893BDC00257F77 /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		97CDB648228ADB2600257F77 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		97CDB64C228B9A6900257F77 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				97B79A0E225F329D001FEB3E /* ViewController.swift */,
 				97B79A28225F33DB001FEB3E /* RootViewController.swift */,
 				97B79A20225F3320001FEB3E /* HomeViewController.swift */,
+				97CDB648228ADB2600257F77 /* DetailViewController.swift */,
 				97348BAF228268C00043DE36 /* KnowEntity.swift */,
 				97CDB63922893BDC00257F77 /* HomeViewCell.swift */,
 				97CDB63A22893BDC00257F77 /* HomeViewCell.xib */,
@@ -105,6 +110,7 @@
 				97B79A21225F3320001FEB3E /* HomeViewController.xib */,
 				97B79A24225F3331001FEB3E /* MineViewController.swift */,
 				97B79A25225F3331001FEB3E /* MineViewController.xib */,
+				97CDB64B228B9A2B00257F77 /* CommonTools */,
 				97348BAB228260290043DE36 /* Vender */,
 				97B79A10225F329D001FEB3E /* Main.storyboard */,
 				97B79A13225F329E001FEB3E /* Assets.xcassets */,
@@ -112,6 +118,14 @@
 				97B79A18225F329E001FEB3E /* Info.plist */,
 			);
 			path = SwiftDemo;
+			sourceTree = "<group>";
+		};
+		97CDB64B228B9A2B00257F77 /* CommonTools */ = {
+			isa = PBXGroup;
+			children = (
+				97CDB64C228B9A6900257F77 /* StringExtension.swift */,
+			);
+			path = CommonTools;
 			sourceTree = "<group>";
 		};
 		E48805F8B8332434A0654A64 /* Pods */ = {
@@ -228,6 +242,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -235,6 +250,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -248,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CDB649228ADB2600257F77 /* DetailViewController.swift in Sources */,
 				97348BAD228262140043DE36 /* SwiftViewController.swift in Sources */,
+				97CDB64D228B9A6900257F77 /* StringExtension.swift in Sources */,
 				97CDB63B22893BDC00257F77 /* HomeViewCell.swift in Sources */,
 				97B79A29225F33DB001FEB3E /* RootViewController.swift in Sources */,
 				97B79A0F225F329D001FEB3E /* ViewController.swift in Sources */,

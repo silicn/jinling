@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.cyan
         
+        self.title = "主页"
+        
         self.tableView = UITableView(frame: CGRect(x: 0,y: 0,width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height), style: UITableView.Style.plain);
         
         self.tableView?.delegate = self as UITableViewDelegate
@@ -67,8 +69,16 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detaiVC = DetailViewController()
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.navigationController?.pushViewController(detaiVC, animated: true);
+    }
+    
+    
     func requestData(){
-        let urlString = ""
+        let urlString = "https://www.ratjin.com/rat/topic/list"
         let url:URL = URL(string: urlString)!
         
         Alamofire.request(url,method:.post).responseJSON { (response) in
