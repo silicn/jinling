@@ -13,7 +13,7 @@ import Alamofire
 class HomeViewController: UIViewController {
 
     
-    var tableView:UITableView?
+   var tableView:UITableView?
    private var dataSource:Array<KnowEntity>?
     
     override func viewDidLoad() {
@@ -33,8 +33,6 @@ class HomeViewController: UIViewController {
          self.dataSource = Array<KnowEntity>()
         requestData()
         
-        
-
         // Do any additional setup after loading the view.
     }
     
@@ -66,19 +64,22 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         let cell:HomeViewCell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as! HomeViewCell
         let know = self.dataSource?[indexPath.row] as KnowEntity?
         cell.textLab.text = know!.content
+        cell.comentsLab.text = String(format: "评论  %d",know!.comments)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detaiVC = DetailViewController()
         
+        let know = self.dataSource?[indexPath.row]
+        detaiVC.content = know?.content
         tableView.deselectRow(at: indexPath, animated: true)
         self.navigationController?.pushViewController(detaiVC, animated: true);
     }
     
     
     func requestData(){
-        let urlString = "https://www.ratjin.com/rat/topic/list"
+        let urlString = ""
         let url:URL = URL(string: urlString)!
         
         Alamofire.request(url,method:.post).responseJSON { (response) in

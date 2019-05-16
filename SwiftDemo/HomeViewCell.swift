@@ -13,6 +13,9 @@ class HomeViewCell: UITableViewCell {
     
     @IBOutlet weak var textLab: UILabel!
     
+    @IBOutlet weak var comentsLab: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

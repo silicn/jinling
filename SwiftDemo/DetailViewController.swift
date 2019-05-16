@@ -10,63 +10,81 @@ import UIKit
 
 import SnapKit
 
-
 class DetailViewController: UIViewController {
 
-    var tableView:UITableView?
+    var tableView:UITableView!
+    
+    var content:String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "详情"
         
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
-        header.backgroundColor = UIColor.cyan
-        self.view.addSubview(header)
-        
-        header.snp.makeConstraints { (make) in
-            make.left.right.equalTo(0)
-            make.height.equalTo(300)
-            make.top.equalTo(self.view.snp_topMargin)
-        } 
-        
-        let lable = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30));
-        lable.text = "测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下测试一下"
-        lable.numberOfLines = 0
-        lable.backgroundColor = UIColor.red
-        header.addSubview(lable)
-        
-        lable.snp.makeConstraints { (make) in
-            make.left.right.equalTo(0)
-            make.top.equalTo(header.snp_top)
-        }
-        
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 100, height: 100),style: UITableView.Style.plain)
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(tableView)
+        
         self.tableView = tableView
         
         tableView.snp_makeConstraints { (make) in
-            make.top.equalTo(header.snp_bottom)
+            make.top.equalTo(self.view.snp_top)
             make.left.right.equalTo(0)
             make.bottom.equalTo(self.view.snp_bottom)
         }
         
+        let header = UIView()
         
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30));
+        label.text = self.content
+        label.numberOfLines = 0
+        header.addSubview(label)
+        
+        header.snp_makeConstraints { (make) in
+            make.width.equalTo(UIScreen.main.bounds.width)
+        }
+        
+        label.snp.makeConstraints { (make) in
+            make.left.equalTo(header.snp_leftMargin).offset(8)
+            make.right.equalTo(header.snp_rightMargin).offset(8)
+            make.top.equalTo(header.snp_top)
+            make.bottom.equalTo(header.snp_bottom)
+        }
+       
+        self.tableView.tableHeaderView = header;
+        
+        let height = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        var frame = header.bounds;
+        frame.size.height = height;
+        header.frame = frame;
+        
+        self.tableView.tableHeaderView = header;
+      
+        self.tableView.tableHeaderView?.setNeedsLayout();
+        self.tableView.tableHeaderView?.layoutIfNeeded();
+        
+        print(self.tableView.frame)
+        
+        let queue = DispatchQueue.global()
+        
+        queue.asyncAfter(deadline: DispatchTime.now() + 2) { 
+            let main = DispatchQueue.main
+            main.async {
+                self.printFrame()
+            }
+        }
+        
+//        self.perform(#selector(printFrame)) 
+        
+        self.perform(#selector(printFrame), with: nil, afterDelay: 2.0)
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   @objc  func printFrame(){
+        print(self.tableView.frame)
     }
-    */
 
 }
 
