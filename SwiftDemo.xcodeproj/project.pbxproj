@@ -24,6 +24,8 @@
 		97CDB63C22893BDC00257F77 /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97CDB63A22893BDC00257F77 /* HomeViewCell.xib */; };
 		97CDB649228ADB2600257F77 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDB648228ADB2600257F77 /* DetailViewController.swift */; };
 		97CDB64D228B9A6900257F77 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDB64C228B9A6900257F77 /* StringExtension.swift */; };
+		97CDB666228E9CFF00257F77 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDB665228E9CFF00257F77 /* CircleView.swift */; };
+		97CDB668229239C300257F77 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDB667229239C300257F77 /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		97CDB63A22893BDC00257F77 /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
 		97CDB648228ADB2600257F77 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		97CDB64C228B9A6900257F77 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		97CDB665228E9CFF00257F77 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		97CDB667229239C300257F77 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +108,14 @@
 				97B79A20225F3320001FEB3E /* HomeViewController.swift */,
 				97CDB648228ADB2600257F77 /* DetailViewController.swift */,
 				97348BAF228268C00043DE36 /* KnowEntity.swift */,
+				97CDB667229239C300257F77 /* Singleton.swift */,
 				97CDB63922893BDC00257F77 /* HomeViewCell.swift */,
 				97CDB63A22893BDC00257F77 /* HomeViewCell.xib */,
 				97348BAC228262140043DE36 /* SwiftViewController.swift */,
 				97B79A21225F3320001FEB3E /* HomeViewController.xib */,
 				97B79A24225F3331001FEB3E /* MineViewController.swift */,
 				97B79A25225F3331001FEB3E /* MineViewController.xib */,
+				97CDB665228E9CFF00257F77 /* CircleView.swift */,
 				97CDB64B228B9A2B00257F77 /* CommonTools */,
 				97348BAB228260290043DE36 /* Vender */,
 				97B79A10225F329D001FEB3E /* Main.storyboard */,
@@ -265,11 +271,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				97CDB649228ADB2600257F77 /* DetailViewController.swift in Sources */,
+				97CDB668229239C300257F77 /* Singleton.swift in Sources */,
 				97348BAD228262140043DE36 /* SwiftViewController.swift in Sources */,
 				97CDB64D228B9A6900257F77 /* StringExtension.swift in Sources */,
 				97CDB63B22893BDC00257F77 /* HomeViewCell.swift in Sources */,
 				97B79A29225F33DB001FEB3E /* RootViewController.swift in Sources */,
 				97B79A0F225F329D001FEB3E /* ViewController.swift in Sources */,
+				97CDB666228E9CFF00257F77 /* CircleView.swift in Sources */,
 				97B79A0D225F329D001FEB3E /* AppDelegate.swift in Sources */,
 				97B79A22225F3320001FEB3E /* HomeViewController.swift in Sources */,
 				97B79A26225F3331001FEB3E /* MineViewController.swift in Sources */,
@@ -420,14 +428,17 @@
 			baseConfigurationReference = 8407C3C6B5A832627EAD0EF4 /* Pods-SwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = YJD2L6AVTN;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Shiguanghui.SwiftDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantgroup.corcle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "develop_*";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -438,14 +449,17 @@
 			baseConfigurationReference = 7E081C3AC38F6615DF583618 /* Pods-SwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Shiguanghui.SwiftDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantgroup.corcle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

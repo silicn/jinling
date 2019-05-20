@@ -75,6 +75,16 @@ class DetailViewController: UIViewController {
             }
         }
         
+        requestDataComplete { (name) in
+            print(name)
+        }
+        
+        let add = requestData(multi: 2)
+        
+        let num = add(4)
+        
+        print(num)
+        
 //        self.perform(#selector(printFrame)) 
         
         self.perform(#selector(printFrame), with: nil, afterDelay: 2.0)
@@ -99,7 +109,17 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource{
             cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         }
         cell?.textLabel?.text = "测试Swift"
-         
+            
         return cell!
+    }
+    
+    func requestDataComplete(closure:(_ name:String)->Void){
+        closure("小明")
+    }
+    func requestData(multi:Int) ->(Int)->Int{
+        return {
+            (num:Int)->Int in 
+                return num * multi
+        }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MineViewController: UIViewController {
 
@@ -15,7 +16,39 @@ class MineViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.orange
 
+        let circle = CircleView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        circle.backgroundColor = UIColor.white
+        self.view.addSubview(circle)
+        circle.snp_makeConstraints { (make) in
+            make.center.equalTo(self.view.snp_center)
+            make.width.height.equalTo(300)
+        }
+        
+        let btn = UIButton(type:.custom)
+        btn.backgroundColor = .white
+        btn.setTitle("Loading", for: .normal)
+        btn.setTitleColor(.cyan, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        self.view.addSubview(btn)
+        btn.addTarget(self, action:#selector(self.btnAction(btn:)), for:.touchUpInside)
+        
+        btn.snp_makeConstraints { (make) in
+            make.top.equalTo(circle.snp_bottomMargin).offset(16)
+            make.centerX.equalTo(circle.snp_centerX)
+            make.width.equalTo(60)
+        }
+        
+        
+        
+        
+        
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func btnAction(btn:UIButton) {
+        print("btnAction")
     }
 
 

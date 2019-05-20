@@ -33,6 +33,18 @@ class HomeViewController: UIViewController {
          self.dataSource = Array<KnowEntity>()
         requestData()
         
+        
+        let s1 = Singleton.shareInstance
+        s1.name = "小花"
+//        s1.userId = "123456"
+        
+        let s2  = Singleton.shareInstance
+        
+        print(s1,s2.name as Any,s2.userId as Any)
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     
