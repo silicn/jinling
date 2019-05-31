@@ -113,6 +113,11 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource{
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
     func requestDataComplete(closure:(_ name:String)->Void){
         closure("小明")
     }

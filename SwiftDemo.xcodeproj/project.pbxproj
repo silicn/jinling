@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460BB7DA22A0FB8100DB7A5E /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */; };
+		460BB7DB22A0FB8100DB7A5E /* CircleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */; };
+		460BB7DD22A0FBD600DB7A5E /* KnowListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */; };
 		4CE1A93A38779172CB8B81B8 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4DB1AAE57DE94586E5E87D /* Pods_SwiftDemo.framework */; };
 		97348BAD228262140043DE36 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97348BAC228262140043DE36 /* SwiftViewController.swift */; };
 		97348BB0228268C00043DE36 /* KnowEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97348BAF228268C00043DE36 /* KnowEntity.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
+		460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleViewController.xib; sourceTree = "<group>"; };
+		460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowListEntity.swift; sourceTree = "<group>"; };
 		5A4DB1AAE57DE94586E5E87D /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E081C3AC38F6615DF583618 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8407C3C6B5A832627EAD0EF4 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +113,10 @@
 				97B79A28225F33DB001FEB3E /* RootViewController.swift */,
 				97B79A20225F3320001FEB3E /* HomeViewController.swift */,
 				97CDB648228ADB2600257F77 /* DetailViewController.swift */,
+				460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */,
+				460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */,
 				97348BAF228268C00043DE36 /* KnowEntity.swift */,
+				460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */,
 				97CDB667229239C300257F77 /* Singleton.swift */,
 				97CDB63922893BDC00257F77 /* HomeViewCell.swift */,
 				97CDB63A22893BDC00257F77 /* HomeViewCell.xib */,
@@ -208,6 +217,7 @@
 				97B79A14225F329E001FEB3E /* Assets.xcassets in Resources */,
 				97CDB63C22893BDC00257F77 /* HomeViewCell.xib in Resources */,
 				97B79A12225F329D001FEB3E /* Main.storyboard in Resources */,
+				460BB7DB22A0FB8100DB7A5E /* CircleViewController.xib in Resources */,
 				97B79A23225F3320001FEB3E /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,11 +287,13 @@
 				97CDB63B22893BDC00257F77 /* HomeViewCell.swift in Sources */,
 				97B79A29225F33DB001FEB3E /* RootViewController.swift in Sources */,
 				97B79A0F225F329D001FEB3E /* ViewController.swift in Sources */,
+				460BB7DD22A0FBD600DB7A5E /* KnowListEntity.swift in Sources */,
 				97CDB666228E9CFF00257F77 /* CircleView.swift in Sources */,
 				97B79A0D225F329D001FEB3E /* AppDelegate.swift in Sources */,
 				97B79A22225F3320001FEB3E /* HomeViewController.swift in Sources */,
 				97B79A26225F3331001FEB3E /* MineViewController.swift in Sources */,
 				97348BB0228268C00043DE36 /* KnowEntity.swift in Sources */,
+				460BB7DA22A0FB8100DB7A5E /* CircleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

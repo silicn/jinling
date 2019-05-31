@@ -91,13 +91,14 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     
     
     func requestData(){
-        let urlString = ""
+        let urlString = "https://www.ratjin.com/rat/topic/list"
         let url:URL = URL(string: urlString)!
         
         Alamofire.request(url,method:.post).responseJSON { (response) in
             if response.result.isSuccess {
                 
                 if response.result.value != nil {
+                    print(response.result.value!)
                     let dic = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as?[String:Any]
                     let list = dic?["list"] as! [Any]
                    
