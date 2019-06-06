@@ -10,16 +10,25 @@ import UIKit
 
 import SnapKit
 
+enum StudentType{
+    case pupil(String)
+    case middle(Int,String)
+    case college(Int,String)
+}
+
 class DetailViewController: UIViewController {
 
     var tableView:UITableView!
     
     var content:String?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "详情"
+        
+        
         
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 100, height: 100),style: UITableView.Style.plain)
         tableView.delegate = self
@@ -75,20 +84,15 @@ class DetailViewController: UIViewController {
             }
         }
         
-        requestDataComplete { (name) in
-            print(name)
-        }
-        
-        let add = requestData(multi: 2)
-        
-        let num = add(4)
-        
-        print(num)
         
 //        self.perform(#selector(printFrame)) 
         
         self.perform(#selector(printFrame), with: nil, afterDelay: 2.0)
 
+        requestDataComplete { (str) in
+            print("complete request \(str)")
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -115,16 +119,22 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
-    func requestDataComplete(closure:(_ name:String)->Void){
-        closure("小明")
+    func requestDataComplete(block:(_ dic:String)->()){
+        block("complete")
     }
-    func requestData(multi:Int) ->(Int)->Int{
-        return {
-            (num:Int)->Int in 
-                return num * multi
+    
+    func makeAdd(_ num:Int)->(Int)->Int{
+        return  { mutail in
+            mutail * num;
         }
     }
+    
+    func speend(_ str:String) ->(String)->String{
+        return { _ in
+            "nihao" + str
+        }
+    }
+    
 }

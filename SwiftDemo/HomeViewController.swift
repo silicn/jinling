@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 
     
    var tableView:UITableView?
-   private var dataSource:Array<KnowEntity>?
+   private var dataSource:Array<KnowListEntity> = Array<KnowListEntity>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,6 @@ class HomeViewController: UIViewController {
         self.view.addSubview(self.tableView!);
         
         self.tableView?.register(UINib.init(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeViewCell")
-         self.dataSource = Array<KnowEntity>()
         requestData()
         
         
@@ -41,6 +40,7 @@ class HomeViewController: UIViewController {
         let s2  = Singleton.shareInstance
         
         print(s1,s2.name as Any,s2.userId as Any)
+        
         
         
         
@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return self.dataSource!.count;
+        return self.dataSource.count;
     }
     
     
@@ -73,18 +73,21 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     
     @available(iOS 2.0, *)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell:HomeViewCell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as! HomeViewCell
-        let know = self.dataSource?[indexPath.row] as KnowEntity?
-        cell.textLab.text = know!.content
-        cell.comentsLab.text = String(format: "评论  %d",know!.comments)
+         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as! HomeViewCell
+        let know = self.dataSource[indexPath.row] as KnowListEntity?
+        if let knowEntity = know {
+            cell.textLab.text = knowEntity.content
+            cell.comentsLab.text = String(format: "评论  %@",knowEntity.comments!)
+        }
+       
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detaiVC = DetailViewController()
         
-        let know = self.dataSource?[indexPath.row]
-        detaiVC.content = know?.content
+        let know = self.dataSource[indexPath.row]
+        detaiVC.content = know.content
         tableView.deselectRow(at: indexPath, animated: true)
         self.navigationController?.pushViewController(detaiVC, animated: true);
     }
@@ -100,12 +103,20 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
                 if response.result.value != nil {
                     print(response.result.value!)
                     let dic = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as?[String:Any]
-                    let list = dic?["list"] as! [Any]
-                   
-                    for know in list {
-                        let model = KnowEntity(dic: know as! Dictionary<String, Any>);
-                        self.dataSource?.append(model)
-                    }
+                    let list = dic?["list"] as! [Dictionary<String,Any>]
+//                    let dataSource =  list.map({ dic -> KnowEntity in
+//                        let model = KnowEntity(dic:dic)
+//                        return model
+//                    })
+//                    self.dataSource = Array(dataSource)
+                    let _ = list.map({ (dic) -> KnowListEntity? in
+                        if let model = KnowListEntity.deserialize(from: dic){
+                            self.dataSource.append(model)
+                            return model
+                        }
+                        return nil
+                    })
+                  
                 }
                 self.tableView?.reloadData()
             }else{

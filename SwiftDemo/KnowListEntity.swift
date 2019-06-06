@@ -7,22 +7,27 @@
 //
 
 import UIKit
+import HandyJSON
 
-class KnowListEntity: NSObject {
+class KnowListEntity: HandyJSON {
+    
+    
 
     var id:String?
     var comments:String?
     var content:String?
     var follows:Int = 0
     var title:String?
+    
+    required init() {}
    
-    init(_ dic:Dictionary<String, Any>){
-        self.id = dic["id"] as? String
-        self.content = dic["content"] as? String
-        self.comments = dic["comments"] as? String
-        self.follows = dic["follows"] as! Int
-        self.title = dic["title"] as? String
-    }
+//    init(_ dic:Dictionary<String, Any>){
+//        self.id = dic["id"] as? String
+//        self.content = dic["content"] as? String
+//        self.comments = dic["comments"] as? String
+//        self.follows = dic["follows"] as! Int
+//        self.title = dic["title"] as? String
+//    }
     
     
 }
