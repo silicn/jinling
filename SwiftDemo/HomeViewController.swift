@@ -42,6 +42,11 @@ class HomeViewController: UIViewController {
         print(s1,s2.name as Any,s2.userId as Any)
         
         
+        let p = People(name: "好的")
+        
+        p.name = "soma "
+        
+    
         
         
         
@@ -84,12 +89,22 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let circle = CircleViewController()
+            self.navigationController?.pushViewController(circle, animated: true)
+            return
+        }
         let detaiVC = DetailViewController()
-        
         let know = self.dataSource[indexPath.row]
         detaiVC.content = know.content
         tableView.deselectRow(at: indexPath, animated: true)
         self.navigationController?.pushViewController(detaiVC, animated: true);
+    }
+    
+    func swaptwoValues<T>(_ a:inout  T,_ b:inout T){
+        let temp = a
+        a = b
+        b = temp
     }
     
     

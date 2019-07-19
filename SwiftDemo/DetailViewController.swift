@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
     
     var content:String?
     
+    var isComplete:Bool = true
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,9 +121,15 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        let circleVc = CircleViewController()
+        self.navigationController?.pushViewController(circleVc, animated: true)
     }
     
     func requestDataComplete(block:(_ dic:String)->()){
+        self.isComplete = false
+        defer {
+            self.isComplete = true
+        }
         block("complete")
     }
     
