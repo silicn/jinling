@@ -30,8 +30,6 @@ class DetailViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         self.title = "详情"
         
-        
-        
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 100, height: 100),style: UITableView.Style.plain)
         tableView.delegate = self
         tableView.dataSource = self

@@ -32,27 +32,80 @@ class HomeViewController: UIViewController {
         self.tableView?.register(UINib.init(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeViewCell")
         requestData()
         
-        
-        let s1 = Singleton.shareInstance
-        s1.name = "小花"
-//        s1.userId = "123456"
-        
-        let s2  = Singleton.shareInstance
-        
-        print(s1,s2.name as Any,s2.userId as Any)
+        numformatter_test()
         
         
-        let p = People(name: "好的")
+       let add = test();
+       print(add(33));
         
-        p.name = "soma "
         
-    
+        
+        
         
         
         
         // Do any additional setup after loading the view.
     }
     
+    func test()->(Int)->(Int){
+        return {
+            (Int) -> Int in {
+                return 2;
+            }()
+        }
+    }
+    
+    func numformatter_test(){
+        let num = NSNumber(value: 12344.34);
+        
+        let numFormatter = NumberFormatter()
+        
+        numFormatter.locale = Locale(identifier: "zh_Hans_CN");
+        
+        numFormatter.numberStyle = .ordinal
+        print(numFormatter.string(from: num) as Any)
+        
+        numFormatter.numberStyle = .currencyPlural
+        print(numFormatter.string(from: num) as Any)
+    }
+    
+    
+    func isPalindrome(_ s: String) -> Bool {
+        if s.count <= 1 {return true}
+        
+        func isValid(_ character: Character) -> Bool {
+            if character >= "a" && character <= "z" {
+                return true
+            }
+            if character >= "0" && character <= "9" {
+                return true
+            }
+            return false
+        }
+        
+        let string = s.lowercased()
+        var sArr = Array(string)
+        var left = 0,right = sArr.count;
+        
+        while left <= right {
+            if !isValid(sArr[left]){
+                left += 1
+            }
+            if !isValid(sArr[right]){
+                right -= 1
+            }
+            if sArr[left] == sArr[right]{
+                left += 1
+                right -= 1
+            }else{
+                break;
+            }
+        }
+        if left <= right {
+            return true
+        }
+        return false;
+    }
     
     /*
     // MARK: - Navigation
@@ -67,6 +120,7 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return self.dataSource.count;

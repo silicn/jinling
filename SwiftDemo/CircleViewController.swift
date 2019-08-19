@@ -10,6 +10,27 @@ import UIKit
 
 import SnapKit
 
+
+protocol Greetable {
+   
+}
+
+extension Greetable {
+    func sayHi(){
+        print("Hello");
+    }
+}
+
+class Animati: Greetable {
+     func sayHi(){
+        print("Animati")
+    }
+}
+
+class LoudPerson: Animati {
+  
+}
+
 class CircleViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -17,28 +38,18 @@ class CircleViewController: UIViewController {
         
         self.title = "Circle"
         
-        let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: 300, height:800))
-         self.view.addSubview(stackView)
+        let stackView = UIView()
+        self.view.addSubview(stackView)
         stackView.backgroundColor = UIColor.cyan
         
         stackView.snp_makeConstraints { (make) in
             make.top.bottom.left.right.equalTo(self.view)
         }
-        stackView.axis = .horizontal
-        stackView.alignment = .leading
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
-        
-        let btn = UIButton()
-        btn.setTitle("测试", for:.normal)
-        stackView.addArrangedSubview(btn)
         
         
+//        var sub:Animati = LoudPerson()
+//        sub.sayHi()
         
-        
-       
-        
-
         // Do any additional setup after loading the view.
     }
 
@@ -54,3 +65,4 @@ class CircleViewController: UIViewController {
     */
 
 }
+
