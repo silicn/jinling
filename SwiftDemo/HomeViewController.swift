@@ -31,14 +31,9 @@ class HomeViewController: UIViewController {
         
         self.tableView?.register(UINib.init(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeViewCell")
         requestData()
+    
         
-        numformatter_test()
-        
-        
-       let add = test();
-       print(add(33));
-        
-        
+        let path = UserInfo.shareInstance.doc_path()
         
         
         
@@ -169,25 +164,37 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         Alamofire.request(url,method:.post).responseJSON { (response) in
             if response.result.isSuccess {
                 
-                if response.result.value != nil {
-                    print(response.result.value!)
-                    let dic = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as?[String:Any]
-                    let list = dic?["list"] as! [Dictionary<String,Any>]
-//                    let dataSource =  list.map({ dic -> KnowEntity in
-//                        let model = KnowEntity(dic:dic)
-//                        return model
-//                    })
-//                    self.dataSource = Array(dataSource)
-                    let _ = list.map({ (dic) -> KnowListEntity? in
+                if let dic = try?JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as? Dictionary<String, Any>{
+                    let list = dic["list"] as! [Dictionary<String,Any>]
+                    
+                    let _  = list.map({ (dic) -> Void in
                         if let model = KnowListEntity.deserialize(from: dic){
                             self.dataSource.append(model)
-                            return model
                         }
-                        return nil
                     })
-                  
+                    self.tableView?.reloadData()
                 }
-                self.tableView?.reloadData()
+
+                
+//                if response.result.value != nil {
+//                    print(response.result.value!)
+//                    let dic = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as?[String:Any]
+//                    let list = dic?["list"] as! [Dictionary<String,Any>]
+////                    let dataSource =  list.map({ dic -> KnowEntity in
+////                        let model = KnowEntity(dic:dic)
+////                        return model
+////                    })
+////                    self.dataSource = Array(dataSource)
+//                    let _ = list.map({ (dic) -> KnowListEntity? in
+//                        if let model = KnowListEntity.deserialize(from: dic){
+//                            self.dataSource.append(model)
+//                            return model
+//                        }
+//                        return nil
+//                    })
+//
+//                }
+//                self.tableView?.reloadData()
             }else{
                 print("request error")
             }

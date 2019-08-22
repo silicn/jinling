@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
     
     var content:String?
     
-    var isComplete:Bool = true
+    private var isComplete:Bool = true
     
 
     override func viewDidLoad() {

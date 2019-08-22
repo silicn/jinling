@@ -8,13 +8,15 @@
 
 import UIKit
 
+
 class Singleton: NSObject {
     var name:String!
     var userId:String!
-    
     
     static let shareInstance:Singleton = {
         let instance = Singleton()
         return instance
     }()
+    
+    
 }

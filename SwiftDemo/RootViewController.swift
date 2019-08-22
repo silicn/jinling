@@ -15,14 +15,21 @@ class RootViewController: UITabBarController {
         
         let homeVC = HomeViewController()
         homeVC.tabBarItem.title = "主页"
+        let audioVC = AudioViewController()
+        audioVC.tabBarItem.title = "主页"
         
         let homeNav = UINavigationController(rootViewController: homeVC)
         homeNav.title = "主页"
         let mineVC = MineViewController()
         mineVC.tabBarItem.title = "我"
         
+        
         let mineNav = UINavigationController(rootViewController: mineVC)
         mineNav.title = "我"
+        
+        
+        
+        
         self.viewControllers = [homeNav,mineNav];
         
         

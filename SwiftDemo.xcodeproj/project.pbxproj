@@ -10,6 +10,11 @@
 		460BB7DA22A0FB8100DB7A5E /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */; };
 		460BB7DB22A0FB8100DB7A5E /* CircleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */; };
 		460BB7DD22A0FBD600DB7A5E /* KnowListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */; };
+		46AC571C230A37B600C6A8A2 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC571B230A37B600C6A8A2 /* AudioViewController.swift */; };
+		46AC574F230D608000C6A8A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC574E230D608000C6A8A2 /* LoginViewController.swift */; };
+		46AC5751230D60A800C6A8A2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AC5750230D60A800C6A8A2 /* LoginViewController.xib */; };
+		46AC5754230D61F500C6A8A2 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC5753230D61F500C6A8A2 /* UserInfo.swift */; };
+		46AC5756230D668900C6A8A2 /* KnowSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC5755230D668900C6A8A2 /* KnowSwift.swift */; };
 		46C8AABA22AE475B0088097E /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8AAB922AE475B0088097E /* People.swift */; };
 		4CE1A93A38779172CB8B81B8 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4DB1AAE57DE94586E5E87D /* Pods_SwiftDemo.framework */; };
 		97348BAD228262140043DE36 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97348BAC228262140043DE36 /* SwiftViewController.swift */; };
@@ -36,6 +41,11 @@
 		460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleViewController.xib; sourceTree = "<group>"; };
 		460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowListEntity.swift; sourceTree = "<group>"; };
+		46AC571B230A37B600C6A8A2 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		46AC574E230D608000C6A8A2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		46AC5750230D60A800C6A8A2 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		46AC5753230D61F500C6A8A2 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		46AC5755230D668900C6A8A2 /* KnowSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowSwift.swift; sourceTree = "<group>"; };
 		46C8AAB922AE475B0088097E /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		5A4DB1AAE57DE94586E5E87D /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E081C3AC38F6615DF583618 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +84,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46AC5747230D5F7300C6A8A2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				46AC574A230D5FB700C6A8A2 /* Models */,
+				46AC5749230D5FAF00C6A8A2 /* Views */,
+				46AC5748230D5F8800C6A8A2 /* Controllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		46AC5748230D5F8800C6A8A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				46AC5752230D61D800C6A8A2 /* UserInfo */,
+				97348BAC228262140043DE36 /* SwiftViewController.swift */,
+				46AC571B230A37B600C6A8A2 /* AudioViewController.swift */,
+				97CDB648228ADB2600257F77 /* DetailViewController.swift */,
+				460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */,
+				460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */,
+				46AC574D230D606400C6A8A2 /* Login */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		46AC5749230D5FAF00C6A8A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97CDB63922893BDC00257F77 /* HomeViewCell.swift */,
+				97CDB63A22893BDC00257F77 /* HomeViewCell.xib */,
+				97CDB665228E9CFF00257F77 /* CircleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46AC574A230D5FB700C6A8A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97348BAF228268C00043DE36 /* KnowEntity.swift */,
+				460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */,
+				46AC5755230D668900C6A8A2 /* KnowSwift.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		46AC574B230D600000C6A8A2 /* CommonTests */ = {
+			isa = PBXGroup;
+			children = (
+				46C8AAB922AE475B0088097E /* People.swift */,
+			);
+			path = CommonTests;
+			sourceTree = "<group>";
+		};
+		46AC574D230D606400C6A8A2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				46AC574E230D608000C6A8A2 /* LoginViewController.swift */,
+				46AC5750230D60A800C6A8A2 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		46AC5752230D61D800C6A8A2 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				46AC5753230D61F500C6A8A2 /* UserInfo.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
 		7761A4732618CC102BA5A639 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,20 +193,11 @@
 				97B79A0E225F329D001FEB3E /* ViewController.swift */,
 				97B79A28225F33DB001FEB3E /* RootViewController.swift */,
 				97B79A20225F3320001FEB3E /* HomeViewController.swift */,
-				97CDB648228ADB2600257F77 /* DetailViewController.swift */,
-				460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */,
-				460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */,
-				97348BAF228268C00043DE36 /* KnowEntity.swift */,
-				460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */,
-				46C8AAB922AE475B0088097E /* People.swift */,
-				97CDB667229239C300257F77 /* Singleton.swift */,
-				97CDB63922893BDC00257F77 /* HomeViewCell.swift */,
-				97CDB63A22893BDC00257F77 /* HomeViewCell.xib */,
-				97348BAC228262140043DE36 /* SwiftViewController.swift */,
 				97B79A21225F3320001FEB3E /* HomeViewController.xib */,
 				97B79A24225F3331001FEB3E /* MineViewController.swift */,
 				97B79A25225F3331001FEB3E /* MineViewController.xib */,
-				97CDB665228E9CFF00257F77 /* CircleView.swift */,
+				46AC5747230D5F7300C6A8A2 /* Classes */,
+				46AC574B230D600000C6A8A2 /* CommonTests */,
 				97CDB64B228B9A2B00257F77 /* CommonTools */,
 				97348BAB228260290043DE36 /* Vender */,
 				97B79A10225F329D001FEB3E /* Main.storyboard */,
@@ -141,6 +211,7 @@
 		97CDB64B228B9A2B00257F77 /* CommonTools */ = {
 			isa = PBXGroup;
 			children = (
+				97CDB667229239C300257F77 /* Singleton.swift */,
 				97CDB64C228B9A6900257F77 /* StringExtension.swift */,
 			);
 			path = CommonTools;
@@ -215,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46AC5751230D60A800C6A8A2 /* LoginViewController.xib in Resources */,
 				97B79A27225F3331001FEB3E /* MineViewController.xib in Resources */,
 				97B79A17225F329E001FEB3E /* LaunchScreen.storyboard in Resources */,
 				97B79A14225F329E001FEB3E /* Assets.xcassets in Resources */,
@@ -288,15 +360,19 @@
 				97348BAD228262140043DE36 /* SwiftViewController.swift in Sources */,
 				97CDB64D228B9A6900257F77 /* StringExtension.swift in Sources */,
 				46C8AABA22AE475B0088097E /* People.swift in Sources */,
+				46AC571C230A37B600C6A8A2 /* AudioViewController.swift in Sources */,
 				97CDB63B22893BDC00257F77 /* HomeViewCell.swift in Sources */,
+				46AC5756230D668900C6A8A2 /* KnowSwift.swift in Sources */,
 				97B79A29225F33DB001FEB3E /* RootViewController.swift in Sources */,
 				97B79A0F225F329D001FEB3E /* ViewController.swift in Sources */,
 				460BB7DD22A0FBD600DB7A5E /* KnowListEntity.swift in Sources */,
 				97CDB666228E9CFF00257F77 /* CircleView.swift in Sources */,
 				97B79A0D225F329D001FEB3E /* AppDelegate.swift in Sources */,
 				97B79A22225F3320001FEB3E /* HomeViewController.swift in Sources */,
+				46AC574F230D608000C6A8A2 /* LoginViewController.swift in Sources */,
 				97B79A26225F3331001FEB3E /* MineViewController.swift in Sources */,
 				97348BB0228268C00043DE36 /* KnowEntity.swift in Sources */,
+				46AC5754230D61F500C6A8A2 /* UserInfo.swift in Sources */,
 				460BB7DA22A0FB8100DB7A5E /* CircleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
