@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow()
         self.window?.rootViewController = RootViewController()
         
+        print("master")
+        
         // Override point for customization after application launch.
         return true
     }
