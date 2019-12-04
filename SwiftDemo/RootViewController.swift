@@ -21,7 +21,9 @@ class RootViewController: UITabBarController {
         let homeNav = UINavigationController(rootViewController: homeVC)
         homeNav.title = "主页"
         let mineVC = MineViewController()
-        mineVC.tabBarItem.title = "我"
+        mineVC.tabBarItem.title = "我"\
+        
+        print("1.1")
         
         
         let mineNav = UINavigationController(rootViewController: mineVC)
