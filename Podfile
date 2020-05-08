@@ -7,7 +7,7 @@ target 'SwiftDemo' do
 
   # Pods for SwiftDemo
 pod 'Alamofire'
-pod 'HandyJSON', '~> 5.0.0-beta.1'
+pod 'HandyJSON', '~> 5.0.1'
 pod 'SnapKit', '~> 4.2.0'
 
 end

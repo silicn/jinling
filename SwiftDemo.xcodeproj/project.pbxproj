@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		460BB7DA22A0FB8100DB7A5E /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */; };
 		460BB7DB22A0FB8100DB7A5E /* CircleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */; };
 		460BB7DD22A0FBD600DB7A5E /* KnowListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */; };
+		467B48B12465553B00451B82 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48B02465553B00451B82 /* DrawViewController.swift */; };
 		46AC571C230A37B600C6A8A2 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC571B230A37B600C6A8A2 /* AudioViewController.swift */; };
 		46AC574F230D608000C6A8A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC574E230D608000C6A8A2 /* LoginViewController.swift */; };
 		46AC5751230D60A800C6A8A2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AC5750230D60A800C6A8A2 /* LoginViewController.xib */; };
@@ -41,6 +42,7 @@
 		460BB7D822A0FB8100DB7A5E /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		460BB7D922A0FB8100DB7A5E /* CircleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleViewController.xib; sourceTree = "<group>"; };
 		460BB7DC22A0FBD600DB7A5E /* KnowListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowListEntity.swift; sourceTree = "<group>"; };
+		467B48B02465553B00451B82 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		46AC571B230A37B600C6A8A2 /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		46AC574E230D608000C6A8A2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		46AC5750230D60A800C6A8A2 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				97B79A21225F3320001FEB3E /* HomeViewController.xib */,
 				97B79A24225F3331001FEB3E /* MineViewController.swift */,
 				97B79A25225F3331001FEB3E /* MineViewController.xib */,
+				467B48B02465553B00451B82 /* DrawViewController.swift */,
 				46AC5747230D5F7300C6A8A2 /* Classes */,
 				46AC574B230D600000C6A8A2 /* CommonTests */,
 				97CDB64B228B9A2B00257F77 /* CommonTools */,
@@ -328,20 +331,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,6 +361,7 @@
 				97B79A0F225F329D001FEB3E /* ViewController.swift in Sources */,
 				460BB7DD22A0FBD600DB7A5E /* KnowListEntity.swift in Sources */,
 				97CDB666228E9CFF00257F77 /* CircleView.swift in Sources */,
+				467B48B12465553B00451B82 /* DrawViewController.swift in Sources */,
 				97B79A0D225F329D001FEB3E /* AppDelegate.swift in Sources */,
 				97B79A22225F3320001FEB3E /* HomeViewController.swift in Sources */,
 				46AC574F230D608000C6A8A2 /* LoginViewController.swift in Sources */,
@@ -523,7 +518,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YJD2L6AVTN;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,7 +527,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "develop_*";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -544,7 +539,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,7 +548,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -26,9 +26,9 @@ class MineViewController: UIViewController {
         
         let btn = UIButton(type:.custom)
         btn.backgroundColor = .white
-        btn.setTitle("Loading", for: .normal)
-        btn.setTitleColor(.cyan, for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        btn.setTitle("Loading", for:.normal)
+        btn.setTitleColor(.cyan, for:.normal)
+        btn.titleLabel?.font = .systemFont(ofSize: 16.0)
         self.view.addSubview(btn)
         btn.addTarget(self, action:#selector(self.btnAction(btn:)), for:.touchUpInside)
         
@@ -38,7 +38,7 @@ class MineViewController: UIViewController {
             make.width.equalTo(60)
         }
         
-        
+        let addBtn = UIButton(frame: CGRect())
         
         
         

@@ -163,38 +163,19 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate {
         
         Alamofire.request(url,method:.post).responseJSON { (response) in
             if response.result.isSuccess {
-                
-                if let dic = try?JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as? Dictionary<String, Any>{
-                    let list = dic["list"] as! [Dictionary<String,Any>]
-                    
-                    let _  = list.map({ (dic) -> Void in
-                        if let model = KnowListEntity.deserialize(from: dic){
-                            self.dataSource.append(model)
+            
+                if let json  = response.result.value {
+                    let dic = json as! Dictionary<String,Any>
+                    let list = dic["list"] as! Array<Dictionary<String,Any>>
+                    let  objList =  list.map { (obj) -> KnowListEntity in
+                        if let model = KnowListEntity.deserialize(from: obj){
+                            return model;
                         }
-                    })
+                        return KnowListEntity();
+                    }
+                    self.dataSource = objList;
                     self.tableView?.reloadData()
                 }
-
-                
-//                if response.result.value != nil {
-//                    print(response.result.value!)
-//                    let dic = try? JSONSerialization.jsonObject(with: response.data!, options: JSONSerialization.ReadingOptions.allowFragments) as?[String:Any]
-//                    let list = dic?["list"] as! [Dictionary<String,Any>]
-////                    let dataSource =  list.map({ dic -> KnowEntity in
-////                        let model = KnowEntity(dic:dic)
-////                        return model
-////                    })
-////                    self.dataSource = Array(dataSource)
-//                    let _ = list.map({ (dic) -> KnowListEntity? in
-//                        if let model = KnowListEntity.deserialize(from: dic){
-//                            self.dataSource.append(model)
-//                            return model
-//                        }
-//                        return nil
-//                    })
-//
-//                }
-//                self.tableView?.reloadData()
             }else{
                 print("request error")
             }

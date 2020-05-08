@@ -18,13 +18,17 @@ class RootViewController: UITabBarController {
         let audioVC = AudioViewController()
         audioVC.tabBarItem.title = "主页"
         
+        let drawVC = DrawViewController()
+        drawVC.title =  "画图"
+        
         let homeNav = UINavigationController(rootViewController: homeVC)
         homeNav.title = "主页"
         let mineVC = MineViewController()
-        mineVC.tabBarItem.title = "我"\
+        mineVC.tabBarItem.title = "我"
         
         print("1.1")
         
+        let drawNav = UINavigationController(rootViewController: drawVC)
         
         let mineNav = UINavigationController(rootViewController: mineVC)
         mineNav.title = "我"
@@ -32,7 +36,7 @@ class RootViewController: UITabBarController {
         
         
         
-        self.viewControllers = [homeNav,mineNav];
+        self.viewControllers = [homeNav,drawNav,mineNav];
         
         
 
