@@ -38,7 +38,7 @@ class MineViewController: UIViewController {
             make.width.equalTo(60)
         }
         
-        let addBtn = UIButton(frame: CGRect())
+        
         
         
         

@@ -10,25 +10,73 @@ import UIKit
 
 import SnapKit
 
+class ListNode {
+    var val:Int
+    var next:ListNode?
+    var prev :ListNode?
+    init(x:Int) {
+        self.val = x;
+    }
+}
+
 class DrawViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        print(drawImage())
+      
+        let head = ListNode(x: 0)
+        let  head1 = ListNode(x:1)
+        head.next = head1;
+        let head2 = ListNode(x: 2)
+        head1.next = head2;
+        let head3 = ListNode(x: 3);
+        head2.next = head3;
+        let next = resversNode(head: head);
+        print(next.next);
         
-        let image = drawImage()
         
-        let imageV = UIImageView(frame: CGRect.zero)
-        imageV.image = image
-        self.view.addSubview(imageV)
         
-        imageV.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view)
-        }
+        
+        
+        
+        
+//        print(drawImage())
+//
+//        let image = drawImage()
+//
+//        let imageV = UIImageView(frame: CGRect.zero)
+//        imageV.image = image
+//        self.view.addSubview(imageV)
+//
+//        imageV.snp.makeConstraints { (make) in
+//            make.edges.equalTo(self.view)
+//        }
         // Do any additional setup after loading the view.
     }
+    
+    func resversNode(head:ListNode)->ListNode{
+        if head.next == nil {return head}
+        
+        var pre:ListNode?
+        var cur = head.next
+        var next = cur?.next
+        while (next != nil) {
+            print(next?.val);
+            cur?.next = pre;
+            pre = cur;
+            cur = next;
+            next = cur?.next;
+        }
+        return cur!;
+    }
+    
+    func insertList(node:ListNode) -> ListNode {
+        if head == nil { return nil }
+    };
+    
+    
     
     func drawImage()-> UIImage {
         
@@ -53,6 +101,7 @@ class DrawViewController: UIViewController {
         
         let image = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        
         return image
     }
 
