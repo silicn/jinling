@@ -40,6 +40,8 @@ class RootViewController: UITabBarController {
         
         print("bracjh 2");
         
+        
+        print ("brach test4");
 
         // Do any additional setup after loading the view.
     }
