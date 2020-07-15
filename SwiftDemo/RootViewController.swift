@@ -38,6 +38,7 @@ class RootViewController: UITabBarController {
         print("test 2");
         self.viewControllers = [homeNav,drawNav,mineNav];
         
+        print("bracjh 2");
         
 
         // Do any additional setup after loading the view.
