@@ -44,7 +44,7 @@ class MineViewController: UIViewController {
         
         print ("branch 1 add");
         
-        
+        print ("branch 3");
         
         
         
