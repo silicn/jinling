@@ -40,6 +40,8 @@ class MineViewController: UIViewController {
         
         print("test 3");
         
+        print ("branch 1");
+        
         
         
         
