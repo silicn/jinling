@@ -33,9 +33,9 @@ class RootViewController: UITabBarController {
         let mineNav = UINavigationController(rootViewController: mineVC)
         mineNav.title = "我"
         
+        print("test 1");
         
-        
-        
+        print("test 2");
         self.viewControllers = [homeNav,drawNav,mineNav];
         
         
