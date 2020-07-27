@@ -46,7 +46,7 @@ class MineViewController: UIViewController {
         
         print ("branch 3");
         
-        
+        print ("test reabse");
         
         
         
