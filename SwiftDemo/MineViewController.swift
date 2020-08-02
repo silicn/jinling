@@ -50,6 +50,7 @@ class MineViewController: UIViewController {
         
         print ("test reabse5");
         
+        print ("test 22");
         
         // Do any additional setup after loading the view.
     }
