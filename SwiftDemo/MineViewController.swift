@@ -38,17 +38,6 @@ class MineViewController: UIViewController {
             make.width.equalTo(60)
         }
         
-        print("test 3");
-        
-        print ("branch 1");
-        
-        print ("branch 1 add");
-        
-        print ("branch 3");
-        
-        print ("test reabse");
-        
-        print ("test reabse5");
         
         
         // Do any additional setup after loading the view.
