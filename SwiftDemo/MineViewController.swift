@@ -44,6 +44,8 @@ class MineViewController: UIViewController {
         
         print("master");
         
+        print("new dev1")
+        
         // Do any additional setup after loading the view.
     }
     
