@@ -54,6 +54,8 @@ class MineViewController: UIViewController {
         
         print("debv 222")
         
+        print ("dev 22222")
+        
     }
 
 
