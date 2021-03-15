@@ -51,6 +51,9 @@ class MineViewController: UIViewController {
         print("btnAction")
         
         print("dev 22")
+        
+        print("debv 222")
+        
     }
 
 
