@@ -49,6 +49,8 @@ class MineViewController: UIViewController {
     
     @objc func btnAction(btn:UIButton) {
         print("btnAction")
+        
+        print("dev 22")
     }
 
 
