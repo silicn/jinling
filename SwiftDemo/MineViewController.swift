@@ -37,7 +37,7 @@ class MineViewController: UIViewController {
             make.centerX.equalTo(circle.snp_centerX)
             make.width.equalTo(60)
         }
-        
+        print("dev1");
         
         
         // Do any additional setup after loading the view.
