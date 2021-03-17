@@ -34,7 +34,7 @@ class DrawViewController: UIViewController {
         let head3 = ListNode(x: 3);
         head2.next = head3;
         let next = resversNode(head: head);
-        print(next.next);
+        print(next.next ?? "");
         
         
         
@@ -72,9 +72,6 @@ class DrawViewController: UIViewController {
         return cur!;
     }
     
-    func insertList(node:ListNode) -> ListNode {
-        if head == nil { return nil }
-    };
     
     
     
